@@ -4,60 +4,6 @@ PLUGIN.schema = "HL2:RP"
 PLUGIN.version = 1
 PLUGIN.description = "Adds a custom derma-UI and custom system for selecting division and rank as CP."
 
-function GetDivision(player, string, any)
-    local char = Player:GetCharacter()
-    local divval = divisionSelection:GetOptionText()
-    local divind = divisionSelection:GetSelectedID()
-    local division = string
-
-    if(divval = "UNION" and divind = 1)
-        division = "union"
-    elseif(divval = "GRID" and divind = 2)
-        division = "grid"
-    elseif(divval = "JURY" and divind = 3)
-        division = "jury"
-    elseif(divval = "KING" and divind = 5)
-        division = "king"
-    elseif(divval = "VICE" and divind = 6)
-        division = "vice"
-    else
-        division = "invalid"
-    end
-end
-function GetRank(player, string, any)
-    local char = Player:GetCharacter()
-    local rankval = rankSelection:GetOptionText()
-    local rankind = rankSelection:GetSelectedID()
-    local cprank = string
-
-    if(rankval = "i4" and rankind = 1)
-        cprank = "i4"
-    elseif(rankval = "i3" and rankind = 2)
-        cprank = "i3"
-    elseif(rankval = "i2" and rankind = 3)
-        cprank = "i2"
-    elseif(rankval = "i1" and rankind = 4)
-        cprank = "i1"
-    elseif(rankval = "OfC" and rankind = 6)
-        cprank = "ofc"
-    elseif(rankval = "SqL" and rankind = 8)
-        cprank = "sql"
-    elseif(rankval = "DvL" and rankind = 9)
-        cprank = "dvl"
-    end
-
-end
-
-function setRank(player, string, index, value, data, any)
-    local char = Player:GetCharacter()
-    local cpr = GetRank():cprank
-    local div = GetDivision():division
-  
-    char:SetName("CP-C17-".. cpr .."-" .. div .. "-" .. Schema:ZeroNumber(math.random(999, 9999), 4))
-
-end
-
-
 function PLUGIN:KeyPress(client, key)
     if ( client:GetCharacter() and client:Alive()) then
         if ( key == KEY_E ) then
@@ -124,4 +70,57 @@ function PLUGIN:KeyPress(client, key)
             end
         end
     end
+end
+
+function GetDivision(player, string, any)
+    local char = Player:GetCharacter()
+    local divval = divisionSelection:GetOptionText()
+    local divind = divisionSelection:GetSelectedID()
+    local division = string
+
+    if(divval = "UNION" and divind = 1) then
+        division = "union"
+    elseif(divval = "GRID" and divind = 2) then
+        division = "grid"
+    elseif(divval = "JURY" and divind = 3) then
+        division = "jury"
+    elseif(divval = "KING" and divind = 5) then
+        division = "king"
+    elseif(divval = "VICE" and divind = 6) then
+        division = "vice"
+    else
+        division = "invalid"
+    end
+end
+function GetRank(player, string, any)
+    local char = Player:GetCharacter()
+    local rankval = rankSelection:GetOptionText()
+    local rankind = rankSelection:GetSelectedID()
+    local cprank = ""
+
+    if(rankval = "i4" and rankind = 1) then
+        cprank = "i4"
+    elseif(rankval = "i3" and rankind = 2) then
+        cprank = "i3"
+    elseif(rankval = "i2" and rankind = 3) then
+        cprank = "i2"
+    elseif(rankval = "i1" and rankind = 4) then
+        cprank = "i1"
+    elseif(rankval = "OfC" and rankind = 6) then
+        cprank = "ofc"
+    elseif(rankval = "SqL" and rankind = 8) then
+        cprank = "sql"
+    elseif(rankval = "DvL" and rankind = 9) then
+        cprank = "dvl"
+    end
+
+end
+
+function setRank(player, string, index, value, data, any)
+    local char = Player:GetCharacter()
+    local cpr = GetRank():cprank
+    local div = GetDivision():division
+  
+    char:SetName("CP-C17-".. cpr .."-" .. div .. "-" .. Schema:ZeroNumber(math.random(999, 9999), 4))
+
 end

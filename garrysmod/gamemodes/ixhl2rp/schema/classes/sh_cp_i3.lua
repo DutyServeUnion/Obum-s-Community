@@ -2,10 +2,6 @@ CLASS.name = "UNION i3"
 CLASS.faction = FACTION_MPF
 CLASS.isDefault = false
 
-function CLASS:CanSwitchTo(client)
-	return Schema:IsCombineRank(client:Name(), "UNION-i3")
-end
-
 function CLASS:OnSet(client)
   local character = client:GetCharacter()
 	character:SetModel("models/dpfilms/metropolice/hdpolice.mdl")

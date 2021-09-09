@@ -33,7 +33,7 @@ function FACTION:OnNameChanged(client, oldValue, value)
 	elseif (!Schema:IsCombineRank(oldValue, "UNION-i3") and Schema:IsCombineRank(value, "UNION-i3")) then
 		character:JoinClass(CLASS_I3)
 	elseif (!Schema:IsCombineRank(oldValue, "GRID-i3") and Schema:IsCombineRank(value, "GRID-i3")) then
-		character:JoinClass(CLASS_I3)
+		character:JoinClass(CLASS_I3GRID)
 	elseif (!Schema:IsCombineRank(oldValue, "JURY-i3") and Schema:IsCombineRank(value, "JURY-i3")) then
 		character:JoinClass(CLASS_I3JURY)
 	elseif (!Schema:IsCombineRank(oldValue, "UNION-i2") and Schema:IsCombineRank(value, "UNION-i2")) then
@@ -64,15 +64,15 @@ function FACTION:OnNameChanged(client, oldValue, value)
 		character:JoinClass(CLASS_KINGSQL)
 	elseif (!Schema:IsCombineRank(oldValue, "VICE-SqL") and Schema:IsCombineRank(value, "VICE-SqL")) then
 		character:JoinClass(CLASS_SQLVICE)
-	elseif (!Schema:IsCombineRank(oldValue, "UNION-SqL") and Schema:IsCombineRank(value, "UNION-SqL")) then
+	elseif (!Schema:IsCombineRank(oldValue, "UNION-DvL") and Schema:IsCombineRank(value, "UNION-DvL")) then
 		character:JoinClass(CLASS_DVL)
-	elseif (!Schema:IsCombineRank(oldValue, "GRID-SqL") and Schema:IsCombineRank(value, "GRID-SqL")) then
+	elseif (!Schema:IsCombineRank(oldValue, "GRID-DvL") and Schema:IsCombineRank(value, "GRID-DvL")) then
 		character:JoinClass(CLASS_GRIDDVL)
-	elseif (!Schema:IsCombineRank(oldValue, "JURY-SqL") and Schema:IsCombineRank(value, "JURY-SqL")) then
+	elseif (!Schema:IsCombineRank(oldValue, "JURY-DvL") and Schema:IsCombineRank(value, "JURY-DvL")) then
 		character:JoinClass(CLASS_JURYDVL)
-	elseif (!Schema:IsCombineRank(oldValue, "KING-SqL") and Schema:IsCombineRank(value, "KING-SqL")) then
+	elseif (!Schema:IsCombineRank(oldValue, "KING-DvL") and Schema:IsCombineRank(value, "KING-DvL")) then
 		character:JoinClass(CLASS_KINGDVL)
-	elseif (!Schema:IsCombineRank(oldValue, "VICE-SqL") and Schema:IsCombineRank(value, "VICE-SqL")) then
+	elseif (!Schema:IsCombineRank(oldValue, "VICE-DvL") and Schema:IsCombineRank(value, "VICE-DvL")) then
 		character:JoinClass(CLASS_VICEDVL)
 	end
 end
@@ -88,7 +88,6 @@ function FACTION:OnTransferred(character)
 
 	--timer.Simple(0.5, function()	
 		character:SetModel(self.models[1])
-		character:AddCombineDisplayMessage("@cCombineLoaded")
 	--end)
 end
 

@@ -205,7 +205,7 @@ if (SERVER) then
 
     function PLUGIN:KeyPress(client, key)
         if ( client:GetCharacter() and client:Alive() ) then
-            if ( key == IN_USE ) then
+            if ( key == KEY_E ) then
                 local HitPos = client:GetEyeTraceNoCursor()
                 local target = HitPos.Entity
                 if target and IsValid(target) and target:IsRagdoll() and self.list[target:GetModel()] then

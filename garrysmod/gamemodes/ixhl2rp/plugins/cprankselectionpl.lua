@@ -60,10 +60,10 @@ end
 
 function PLUGIN:KeyPress(client, key)
     if ( client:GetCharacter() and client:Alive()) then
-        if ( key == IN_USE ) then
+        if ( key == KEY_E ) then
             local HitPos = client:GetEyeTraceNoCursor()
             local target = HitPos.Entity
-            if(target:GetModel() = "models/dpfilms/metropolice/police_bt.mdl") then
+            if(target:GetModel() = "models/items/ammocrate_rockets.mdl") then
                 local base = vgui.Create("DFrame")
                 base:SetSize(500, 450)
                 base:SetTitle("CP Rank Officer")

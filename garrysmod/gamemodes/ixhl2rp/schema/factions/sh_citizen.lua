@@ -42,25 +42,25 @@ end
 
 function FACTION:OnTransferred(character)
 	local client = character:GetPlayer()
-	setCharacterCitizen(character, client)
+	restorePlayerSettings(character, client)
 end
 
 function FACTION:OnSpawn(client)
 	local character = client:GetCharacter()
-	setCharacterCitizen(character, client)
+	restorePlayerSettings(character, client)
 end
 
-function setCharacterCitizen(character, client)
-	local model = character:GetData("citizen-model")
-	local name = character:GetData("citizen-name")
-	local bodygroup = character:GetData("citizen-bodygroup")
-	if model == nil or model == "" then initCitizenData(character) return end
+function restorePlayerSettings(character, client)
+	local civmodel = character:GetData("citizen-model")
+	local civname = character:GetData("citizen-name")
+	local civbodygroup = character:GetData("citizen-bodygroup")
+	if civmodel == nil or civmodel == "" then character:SetModel("models/player/zelpa/male_07.mdl") return end
 	
 	character:SetFaction(3)
-	character:SetModel(model)
-	character:SetName(name)
-	if bodygroup ~= nil or bodygroup ~= {} or bodygroup ~= "" then
-		client:SetBodyGroups(bodygroup)
+	character:SetModel(civmodel)
+	character:SetName(civname)
+	if civbodygroup ~= nil or civbodygroup ~= {} or civbodygroup ~= "" then
+		client:SetBodyGroups(civbodygroup)
 	end
 end
 

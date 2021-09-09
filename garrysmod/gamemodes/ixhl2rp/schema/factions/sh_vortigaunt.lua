@@ -1,4 +1,3 @@
-VORTIGAUNT_MODEL = "models/vortigaunt.mdl"
 FACTION.name = "Vortigaunt"
 FACTION.description = ""
 FACTION.color = Color(0, 150, 0)
@@ -21,7 +20,7 @@ function FACTION:OnTransferred(character)
 end
 
 function initVortigaunt(ply)
-	ply:SetModel(VORTIGAUNT_MODEL)
+	ply:SetModel("models/vortigaunt.mdl")
 end
 
 FACTION_VORTIGAUNT = FACTION.index

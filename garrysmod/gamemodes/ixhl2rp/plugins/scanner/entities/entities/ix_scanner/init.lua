@@ -6,22 +6,18 @@ AddCSLuaFile("shared.lua")
 util.AddNetworkString("ixScannerFlash")
 
 ENT.scanSounds = {
-    "npc/scanner/scanner_scan1.wav",
-    "npc/scanner/scanner_scan2.wav",
-    "npc/scanner/scanner_scan4.wav",
-    "npc/scanner/scanner_scan5.wav",
-    "npc/scanner/combat_scan1.wav",
-    "npc/scanner/combat_scan2.wav",
-    "npc/scanner/combat_scan3.wav",
-    "npc/scanner/combat_scan4.wav",
-    "npc/scanner/combat_scan5.wav",
+    "cbot/cbot_scan1.wav",
+    "cbot/cbot_scan2.wav",
+    "cbot/cbot_alert1.wav",
+    "cbot/cbot_blip1.wav",
 }
 ENT.painSounds = {
-    "npc/scanner/scanner_pain1.wav",
-    "npc/scanner/scanner_pain2.wav",
-    "npc/scanner/scanner_alert1.wav",
+    "cbot/cbot_battletalk1.wav",
+    "cbot/cbot_battletalk2.wav",
+    "cbot/cbot_battletalk3.wav",
+    "cbot/cbot_battletalk4.wav",
 }
-ENT.sirenSound = "npc/scanner/scanner_siren2.wav"
+ENT.sirenSound = "cbot/cbot_servosuprise.wav"
 
 function ENT:EjectPilot(no)
     local pilot = self:GetPilot()

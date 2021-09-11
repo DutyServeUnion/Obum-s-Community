@@ -15,17 +15,17 @@ function GetDivision(player, string, any)
     local division = string
 
     if(divval == "UNION" and divind == 1) then
-        division == "union"
+        division = "union"
     elseif(divval == "GRID" and divind == 2) then
-        division == "grid"
+        division = "grid"
     elseif(divval == "JURY" and divind == 3) then
-        division == "jury"
+        division = "jury"
     elseif(divval == "KING" and divind == 5) then
-        division == "king"
+        division = "king"
     elseif(divval == "VICE" and divind == 6) then
-        division == "vice"
+        division = "vice"
     else
-        division == "invalid"
+        division = "invalid"
     end
 end
 function GetRank(player, string, any)

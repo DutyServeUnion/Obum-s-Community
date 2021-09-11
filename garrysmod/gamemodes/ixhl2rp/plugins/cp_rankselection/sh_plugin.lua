@@ -14,18 +14,18 @@ function GetDivision(player, string, any)
     local divind = divisionSelection:GetSelectedID()
     local division = string
 
-    if(divval = "UNION" and divind = 1) then
-        division = "union"
-    elseif(divval = "GRID" and divind = 2) then
-        division = "grid"
-    elseif(divval = "JURY" and divind = 3) then
-        division = "jury"
-    elseif(divval = "KING" and divind = 5) then
-        division = "king"
-    elseif(divval = "VICE" and divind = 6) then
-        division = "vice"
+    if(divval == "UNION" and divind == 1) then
+        division == "union"
+    elseif(divval == "GRID" and divind == 2) then
+        division == "grid"
+    elseif(divval == "JURY" and divind == 3) then
+        division == "jury"
+    elseif(divval == "KING" and divind == 5) then
+        division == "king"
+    elseif(divval == "VICE" and divind == 6) then
+        division == "vice"
     else
-        division = "invalid"
+        division == "invalid"
     end
 end
 function GetRank(player, string, any)
@@ -34,19 +34,19 @@ function GetRank(player, string, any)
     local rankind = rankSelection:GetSelectedID()
     local cprank = ""
 
-    if(rankval = "i4" and rankind = 1) then
+    if(rankval == "i4" and rankind == 1) then
         cprank = "i4"
-    elseif(rankval = "i3" and rankind = 2) then
+    elseif(rankval == "i3" and rankind == 2) then
         cprank = "i3"
-    elseif(rankval = "i2" and rankind = 3) then
+    elseif(rankval == "i2" and rankind == 3) then
         cprank = "i2"
-    elseif(rankval = "i1" and rankind = 4) then
+    elseif(rankval == "i1" and rankind == 4) then
         cprank = "i1"
-    elseif(rankval = "OfC" and rankind = 6) then
+    elseif(rankval == "OfC" and rankind == 6) then
         cprank = "ofc"
-    elseif(rankval = "SqL" and rankind = 8) then
+    elseif(rankval == "SqL" and rankind == 8) then
         cprank = "sql"
-    elseif(rankval = "DvL" and rankind = 9) then
+    elseif(rankval == "DvL" and rankind == 9) then
         cprank = "dvl"
     end
 
@@ -86,7 +86,7 @@ if CLIENT
         divisionSelection:AddChoice("KING")
         divisionSelection:AddChoice("VICE")
         divisionSelection:GetSortItems(false)
-        divisionSelection:OnSelect(index, value, data) then
+        divisionSelection:OnSelect(index, value, data)
             print(value .." was selected at index ".. index)
             GetDivision()
         end

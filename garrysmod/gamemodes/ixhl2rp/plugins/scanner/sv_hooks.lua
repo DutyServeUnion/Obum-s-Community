@@ -88,12 +88,6 @@ function PLUGIN:KeyPress(client, key)
 		elseif (key == IN_RELOAD) then
 			source = "npc/scanner/scanner_talk"..math.random(1, 2)..".wav"
 			client.ixScnDelay = CurTime() + 10
-		elseif (key == KEY_M) then
-			source = "cbot/cbot_speak4.wav"
-			client.ixScnDelay = CurTime() + 10
-		elseif (key == KEY_N) then
-			source = "cbot/cbot_speak"..math.random(1, 3)..".wav"
-			client.ixScnDelay = CurTime() + 10
 		elseif (key == IN_WALK) then
 			if (client:GetViewEntity() == client.ixScn) then
 				client:SetViewEntity(NULL)

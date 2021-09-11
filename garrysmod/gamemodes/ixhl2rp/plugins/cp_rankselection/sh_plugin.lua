@@ -8,61 +8,14 @@ PLUGIN.description = "Adds a custom derma-UI and custom system for selecting div
 ix.util.Include("sv_plugin.lua")
 ix.util.Include("sv_hooks.lua")
 
-function GetDivision(player, string, any)
-    local char = Player:GetCharacter()
-    local divval = divisionSelection:GetOptionText()
-    local divind = divisionSelection:GetSelectedID()
-    local division = string
+local cpmodel = "models/dpfilms/metropolice/hdpolice.mdl"
 
-    if(divval == "UNION" and divind == 1) then
-        division = "union"
-    elseif(divval == "GRID" and divind == 2) then
-        division = "grid"
-    elseif(divval == "JURY" and divind == 3) then
-        division = "jury"
-    elseif(divval == "KING" and divind == 5) then
-        division = "king"
-    elseif(divval == "VICE" and divind == 6) then
-        division = "vice"
-    else
-        division = "invalid"
-    end
-end
-function GetRank(player, string, any)
-    local char = Player:GetCharacter()
-    local rankval = rankSelection:GetOptionText()
-    local rankind = rankSelection:GetSelectedID()
-    local cprank = ""
+local cprank = ""
+local division = ""
 
-    if(rankval == "i4" and rankind == 1) then
-        cprank = "i4"
-    elseif(rankval == "i3" and rankind == 2) then
-        cprank = "i3"
-    elseif(rankval == "i2" and rankind == 3) then
-        cprank = "i2"
-    elseif(rankval == "i1" and rankind == 4) then
-        cprank = "i1"
-    elseif(rankval == "OfC" and rankind == 6) then
-        cprank = "ofc"
-    elseif(rankval == "SqL" and rankind == 8) then
-        cprank = "sql"
-    elseif(rankval == "DvL" and rankind == 9) then
-        cprank = "dvl"
-    end
-
-end
-
-function setRank(player, string, index, value, data, any)
-    local char = Player:GetCharacter()
-    local cpr = GetRank():cprank
-    local div = GetDivision():division
-  
-    char:SetName("CP-C17-".. cpr .."-" .. div .. "-" .. Schema:ZeroNumber(math.random(999, 9999), 4))
-
-end
-
-if CLIENT
+if CLIENT then
     netstream.Hook("ixCPRankUse", function(data)
+
         local base = vgui.Create("DFrame")
         base:SetSize(500, 450)
         base:SetTitle("CP Rank Officer")
@@ -70,54 +23,88 @@ if CLIENT
         base:SetVisible(true)
         base:ShowCloseButton(true)
         base:MakePopup()
-        base:Paint = function(s, w, h)
-            draw.RoundedBox(5, 0, 0, w, h, Color(18, 16, 14))
-            draw.RoundedBox(5, 2, 2, w-4, h-4, Color(46, 40, 35))
+        function base:Paint(w,h)
+            draw.RoundedBox(5, 0, 0, 500, 450, Color(18, 16, 14))
+            draw.RoundedBox(5, 2, 2, 500-4, 450-4, Color(46, 40, 35))
         end
 
         local divisionSelection = vgui.Create("DComboBox", base)
-        divisionSelection.SetSize(100, 50)
         divisionSelection:SetPos( 15, 30 )
+        divisionSelection:SetSize( 100, 50)
+        divisionSelection:GetSortItems(false)
         divisionSelection:SetValue("Select Division")
         divisionSelection:AddChoice("UNION")
         divisionSelection:AddChoice("GRID")
         divisionSelection:AddChoice("JURY")
-        divisionSelection:AddSpacer()
         divisionSelection:AddChoice("KING")
-        divisionSelection:AddChoice("VICE")
-        divisionSelection:GetSortItems(false)
-        divisionSelection:OnSelect(index, value, data)
-            print(value .." was selected at index ".. index)
-            GetDivision()
+        divisionSelection:AddChoice("VICE")   
+        function divisionSelection:OnSelect(index, text, data)
+            print(text .." was selected at index ".. index)
+            function GetDivision(player, string, any, index, text)
+                if(text == "UNION" and index == 1) then
+                    division = "union"
+                    cpmodel = "models/dpfilms/metropolice/hdpolice.mdl"
+                elseif(text == "GRID" and index == 2) then
+                    division = "grid"
+                    cpmodel = "models/dpfilms/metropolice/hl2concept.mdl"
+                elseif(text == "JURY" and index == 3) then
+                    division = "jury"
+                    cpmodel = "models/dpfilms/metropolice/policetrench.mdl"
+                elseif(text == "KING" and index == 5) then
+                    division = "king"
+                    cpmodel = "models/dpfilms/metropolice/elite_police.mdl"
+                elseif(text == "VICE" and index == 6) then
+                    division = "vice"
+                else
+                    division = "invalid"
+                end
+                net.Start("CPDivision")
+                net.Send(division)
+            end
         end
 
         local rankSelection = vgui.Create("DComboBox", base)
-        rankSelection.SetSize(100, 50)
-        rankSelection:SetPos( 65, 30 )
+        rankSelection:SetPos( 165, 30 )
+        rankSelection:SetSize( 100, 50)
+        rankSelection:GetSortItems(false)
         rankSelection:SetValue("Select Rank")
         rankSelection:AddChoice("i4")
         rankSelection:AddChoice("i3")
         rankSelection:AddChoice("i2")
         rankSelection:AddChoice("i1")
-        rankSelection:AddSpacer()
         rankSelection:AddChoice("OfC")
-        rankSelection:AddSpacer()
         rankSelection:AddChoice("SqL")
         rankSelection:AddChoice("DvL")
-        rankSelection:GetSortItems(false)
-        rankSelection:OnSelect(index, text, data)
-            print(value .." was selected at index ".. index)
-            GetRank()
+        function rankSelection:OnSelect(index, text, data)
+            print(text .." was selected at index ".. index)
+            function GetRank(player, string, index, text)
+                if(text == "i4" and index == 1) then
+                    cprank = "i4"
+                elseif(text == "i3" and index == 2) then
+                    cprank = "i3"
+                elseif(text == "i2" and index == 3) then
+                    cprank = "i2"
+                elseif(text == "i1" and index == 4) then
+                    cprank = "i1"
+                elseif(text == "OfC" and index == 6) then
+                    cprank = "ofc"
+                elseif(text == "SqL" and index == 8) then
+                    cprank = "sql"
+                elseif(text == "DvL" and index == 9) then
+                    cprank = "dvl"
+                else
+                    cprank = "invalid"
+                end
+            end
         end
-
         local finishButton = vgui.Create( "DButton", base )
         finishButton:SetText("Finish")
         finishButton:SetSize( 250, 30 )	
-        finishButton.DoClick(player, string, any)
-            if(GetDivision():division != nil and GetRank():cprank != nil)
-                setRank()
-            else
-                return
+        finishButton:SetPos( 125, 400 )
+        function finishButton.DoClick(text, index)
+            function setRank(client, string, index, text, data, any)
+                local character = client:GetCharacter()
+                character:SetName("CP-C17-".. cpr .."-" .. div .. "-" .. Schema:ZeroNumber(math.random(999, 9999), 4))
             end
         end
     end)

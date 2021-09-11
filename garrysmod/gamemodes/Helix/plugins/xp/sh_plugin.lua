@@ -4,8 +4,8 @@ PLUGIN.name = "XP System"
 PLUGIN.author = "Bilwin"
 PLUGIN.description = "Adds XP whitelisted system"
 PLUGIN.schema = "any"
-PLUGIN.version = 1.0
-PLUGIN.license = [[
+PLUGIN.version = 1
+PLUGIN.license = --[[
     This is free and unencumbered software released into the public domain.
     Anyone is free to copy, modify, publish, use, compile, sell, or
     distribute this software, either in source code form or as a compiled
@@ -27,7 +27,7 @@ PLUGIN.license = [[
     OTHER DEALINGS IN THE SOFTWARE.
     For more information, please refer to <http://unlicense.org/>
 ]]
-PLUGIN.readme = [[
+PLUGIN.readme = --[[
     This plugin adds the XP system to the server, if it is enabled.
     If used correctly, you can make it so that you need to have some XP to select a class.
     The table ix.XPSystem.whitelists contains fractions and classes for it, and XP need (Classes are necessary!)
@@ -45,15 +45,37 @@ end
 
 ix.XPSystem = {}
 ix.XPSystem.whitelists = {
-    --[FACTION_CITIZEN] = {
-    --    [CLASS_CITIZEN] = 0,
-    --    [CLASS_CWU]     = 5
-    --},
-    --[FACTION_MPF] = {
-    --    [CLASS_MPR]     = 50,
-    --    [CLASS_MPU]     = 75,
-    --    [CLASS_EMP]     = 100
-    --},
+    [FACTION_CITIZEN] = {
+        [CLASS_CITIZEN] = 0,
+        [CLASS_CWU]     = 15
+    },
+    [FACTION_MPF] = {
+        [CLASS_I4]     = 50,
+        [CLASS_I4JURY]     = 50,
+        [CLASS_I4GRID]     = 50,
+		[CLASS_I3]     = 100,
+        [CLASS_I3JURY]     = 100,
+        [CLASS_I3GRID]     = 100,
+		[CLASS_I2]     = 400,
+        [CLASS_I2JURY]     = 400,
+        [CLASS_I2GRID]     = 400,
+		[CLASS_I1]     = 800,
+        [CLASS_I1JURY]     = 800,
+        [CLASS_I1GRID]     = 800,
+		[CLASS_OFC]     = 1600,
+        [CLASS_OFCJURY]     = 1600,
+        [CLASS_OFCGRID]     = 1600,
+		[CLASS_SQLVICE]     = 2400,
+        [CLASS_KINGSQL]     = 2400,
+		[CLASS_JURYSQL]     = 2400,
+        [CLASS_SQL]     = 2400,
+        [CLASS_GRIDSQL]     = 2400,
+		[CLASS_VICEDVL]     = 4800,
+        [CLASS_KINGDVL]     = 4800,
+		[CLASS_JURYDVL]     = 4800,
+        [CLASS_DVL]     = 4800,
+        [CLASS_GRIDDVL]     = 4800
+    }
     --[FACTION_OTA] = {
     --    [CLASS_OWS]     = 200,
     --    [CLASS_EOW]     = 300

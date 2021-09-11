@@ -1,3 +1,4 @@
+
 PLUGIN.name = "Corpse Butchering"
 PLUGIN.author = "Bilwin"
 PLUGIN.schema = "Any"
@@ -36,102 +37,6 @@ PLUGIN.list = {
         items = {'item_uniqueID1', 'item_uniqueID2'}                                            -- Items to be issued for character after butchered
     }
     --]]
-    ['models/player/zelpa/male_01.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/male_02.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/male_03.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/male_04.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/male_05.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/male_06.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/male_07.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/male_08.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/male_09.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/male_10.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/female_01.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/female_02.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/female_03.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/female_04.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/female_06.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
-    ['models/player/zelpa/female_07.mdl'] = {
-        butcheringTime = 10,
-        impactEffect = "BloodImpact",
-        butcheringWeapons = {'weapon_crowbar'},
-        items = {'humanflesh'}
-    },
     ['models/Lamarr.mdl'] = {
         butcheringTime = 5,
         items = {}
@@ -158,7 +63,7 @@ PLUGIN.list = {
 
 if (SERVER) then
     ix.log.AddType("playerButchered", function(client, corpse)
-        return string.format("%s was butchered by %s.", client:Name(), corpse:GetModel())
+        return string.format("%s was butchered %s.", client:Name(), corpse:GetModel())
     end)
 
     util.AddNetworkString('ixClearClientRagdolls')
@@ -205,7 +110,7 @@ if (SERVER) then
 
     function PLUGIN:KeyPress(client, key)
         if ( client:GetCharacter() and client:Alive() ) then
-            if ( key == KEY_E ) then
+            if ( key == IN_USE ) then
                 local HitPos = client:GetEyeTraceNoCursor()
                 local target = HitPos.Entity
                 if target and IsValid(target) and target:IsRagdoll() and self.list[target:GetModel()] then

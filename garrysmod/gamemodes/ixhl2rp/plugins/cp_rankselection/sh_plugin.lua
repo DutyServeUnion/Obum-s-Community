@@ -24,8 +24,8 @@ if CLIENT then
         base:ShowCloseButton(true)
         base:MakePopup()
         function base:Paint(w,h)
-            draw.RoundedBox(5, 0, 0, 500, 450, Color(18, 16, 14))
-            draw.RoundedBox(5, 2, 2, 500-4, 450-4, Color(46, 40, 35))
+            draw.RoundedBox(5, 0, 0, 500, 450, Color(18, 16, 14, 245))
+            draw.RoundedBox(5, 2, 2, 500-4, 450-4, Color(46, 40, 35, 210))
         end
 
         local divisionSelection = vgui.Create("DComboBox", base)

@@ -1,11 +1,11 @@
 "darkrp"
 {
 	"base"		"darkrp"
-    "title"  "DerivedRP"
+    "title"  "Obum's Community HL2 : Beta Roleplay"
     "version"   "1.0.0"
     "menusystem"	"1"
 
-    "author_name"   "Harray and FPtje Falco et al."
+    "author_name"   "The Apex Typhon"
     "author_email"  ""
     "author_url"    "https://github.com/FPtje/DarkRP"
 

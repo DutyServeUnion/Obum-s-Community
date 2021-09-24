@@ -1,0 +1,15 @@
+"darkrp"
+{
+	"base"		"darkrp"
+    "title"  "DerivedRP"
+    "version"   "1.0.0"
+    "menusystem"	"1"
+
+    "author_name"   "Harray and FPtje Falco et al."
+    "author_email"  ""
+    "author_url"    "https://github.com/FPtje/DarkRP"
+
+    "icon"  ""
+    "info"  ""
+    "hide"  "0"
+}

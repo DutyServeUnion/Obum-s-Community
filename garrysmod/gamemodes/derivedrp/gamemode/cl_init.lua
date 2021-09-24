@@ -1,8 +1,8 @@
 hook.Run("DarkRPStartedLoading")
 
 GM.Version = "1.0.0"
-GM.Name = "DarkRP"
-GM.Author = "By Harry, FPtje Falco et al."
+GM.Name = "Obum's Community HL2 : Beta Roleplay"
+GM.Author = "The Apex Typhon"
 
 DeriveGamemode("darkrp")
 DEFINE_BASECLASS("gamemode_darkrp")

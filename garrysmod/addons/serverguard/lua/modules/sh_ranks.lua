@@ -59,7 +59,7 @@ if (SERVER) then
     function serverguard.ranks:CAMILoadRank(unique)
         local rank = serverguard.ranks.stored[unique]
 
-		if (unique != "user" and unique != "admin" and unique != "superadmin") then
+		if (unique != "user" and unique != "admin" and unique != "developer" and unique != "superadmin") then
 			if (self:HasPermission(unique, "Superadmin")) then
 				CAMI.RegisterUsergroup({Name = unique, Inherits = "superadmin"}, "SERVERGUARD");
 			elseif (self:HasPermission(unique, "Admin")) then

@@ -18,7 +18,7 @@ Set to true or false.
 -- voice3D - Enable/disable 3DVoice is enabled.
 GM.Config.voice3D                       = true
 -- AdminsCopWeapons - Enable/disable admins spawning with cop weapons.
-GM.Config.AdminsCopWeapons              = true
+GM.Config.AdminsCopWeapons              = false
 -- adminBypassJobCustomCheck - Enable/disable whether an admin can force set a job with whenever customCheck returns false.
 GM.Config.adminBypassJobRestrictions    = true
 -- Acts/Taunts - Enable/disable Taunts (e.g. act salute)
@@ -28,7 +28,7 @@ GM.Config.allowjobswitch                = true
 -- allowrpnames - Allow Players to Set their RP names using the /rpname command.
 GM.Config.allowrpnames                  = true
 -- allowsprays - Enable/disable the use of sprays on the server.
-GM.Config.allowsprays                   = true
+GM.Config.allowsprays                   = false
 -- allowvehicleowning - Enable/disable whether people can own vehicles.
 GM.Config.allowvehicleowning            = true
 -- allowvnocollide - Enable/disable the ability to no-collide a vehicle (for security).
@@ -40,51 +40,51 @@ GM.Config.antimultirun                  = true
 -- autovehiclelock - Enable/Disable automatic locking of a vehicle when a player exits it.
 GM.Config.autovehiclelock               = false
 -- babygod - people spawn godded (prevent spawn killing).
-GM.Config.babygod                       = true
+GM.Config.babygod                       = false
 -- canforcedooropen - whether players can force an unownable door open with lockpick or battering ram or w/e.
 GM.Config.canforcedooropen              = true
 -- chatsounds - sounds are played when some things are said in chat.
-GM.Config.chatsounds                    = true
+GM.Config.chatsounds                    = false
 -- chiefjailpos - Allow the Chief to set the jail positions.
-GM.Config.chiefjailpos                  = true
+GM.Config.chiefjailpos                  = false
 -- cit_propertytax - Enable/disable property tax that is exclusive only for citizens.
 GM.Config.cit_propertytax               = false
 -- copscanunfreeze - Enable/disable the ability of cops to unfreeze other people's props.
-GM.Config.copscanunfreeze               = true
+GM.Config.copscanunfreeze               = false
 -- copscanunweld - Enable/disable the ability of cops to unweld other people's props.
 GM.Config.copscanunweld                 = false
 -- cpcanarrestcp - Allow/Disallow CPs to arrest other CPs.
-GM.Config.cpcanarrestcp                 = true
+GM.Config.cpcanarrestcp                 = false
 -- currencyLeft - The position of the currency symbol. true for left, false for right.
 GM.Config.currencyLeft                  = true
 -- customjobs - Enable/disable the /job command (personalized job names).
-GM.Config.customjobs                    = true
+GM.Config.customjobs                    = false
 -- customspawns - Enable/disable whether custom spawns should be used.
 GM.Config.customspawns                  = true
 -- deathblack - Whether or not a player sees black on death.
 GM.Config.deathblack                    = false
 -- showdeaths - Display kill information in the upper right corner of everyone's screen.
-GM.Config.showdeaths                    = true
+GM.Config.showdeaths                    = false
 -- deadtalk - Enable/disable whether people talk and use commands while dead.
 GM.Config.deadtalk                      = true
 -- deadvoice - Enable/disable whether people talk through the microphone while dead.
 GM.Config.deadvoice                     = true
 -- deathpov - Enable/disable whether people see their death in first person view.
-GM.Config.deathpov                      = false
+GM.Config.deathpov                      = true
 -- decalcleaner - Enable/Disable clearing every player's decals.
 GM.Config.decalcleaner                  = false
 -- disallowClientsideScripts - Clientside scripts can be very useful for customizing the HUD or to aid in building. This option bans those scripts.
-GM.Config.disallowClientsideScripts     = false
+GM.Config.disallowClientsideScripts     = true
 -- doorwarrants - Enable/disable Warrant requirement to enter property.
-GM.Config.doorwarrants                  = true
+GM.Config.doorwarrants                  = false
 -- dropmoneyondeath - Enable/disable whether people drop money on death.
-GM.Config.dropmoneyondeath              = false
+GM.Config.dropmoneyondeath              = true
 -- droppocketarrest - Enable/disable whether people drop the stuff in their pockets when they get arrested.
 GM.Config.droppocketarrest              = false
 -- droppocketdeath - Enable/disable whether people drop the stuff in their pockets when they die.
 GM.Config.droppocketdeath               = true
 -- dropweapondeath - Enable/disable whether people drop their current weapon when they die.
-GM.Config.dropweapondeath               = false
+GM.Config.dropweapondeath               = true
 -- Whether players can drop the weapons they spawn with.
 GM.Config.dropspawnedweapons            = false
 -- dynamicvoice - Enable/disable whether only people in the same room as you can hear your mic.
@@ -92,13 +92,13 @@ GM.Config.dynamicvoice                  = true
 -- earthquakes - Enable/disable earthquakes.
 GM.Config.earthquakes                   = false
 -- enablebuypistol - Turn /buy on of off.
-GM.Config.enablebuypistol               = true
+GM.Config.enablebuypistol               = false
 -- enforceplayermodel - Whether or not to force players to use their role-defined character models.
 GM.Config.enforceplayermodel            = true
 -- globalshow - Whether or not to display player info above players' heads in-game.
 GM.Config.globalshow                    = false
 -- ironshoot - Enable/disable whether people need iron sights to shoot.
-GM.Config.ironshoot                     = true
+GM.Config.ironshoot                     = false
 -- showjob - Whether or not to display a player's job above their head in-game.
 GM.Config.showjob                       = true
 -- letters - Enable/disable letter writing / typing.
@@ -106,17 +106,17 @@ GM.Config.letters                       = true
 -- license - Enable/disable People need a license to be able to pick up guns.
 GM.Config.license                       = false
 -- lockdown - Enable/Disable initiating lockdowns for mayors.
-GM.Config.lockdown                      = true
+GM.Config.lockdown                      = false
 -- lockpickfading - Enable/disable the lockpicking of fading doors.
 GM.Config.lockpickfading                = true
 -- logging - Enable/disable logging everything that happens.
 GM.Config.logging                       = true
 -- lottery - Enable/disable creating lotteries for mayors.
-GM.Config.lottery                       = true
+GM.Config.lottery                       = false
 -- showname - Whether or not to display a player's name above their head in-game.
 GM.Config.showname                      = true
 -- showhealth - Whether or not to display a player's health above their head in-game.
-GM.Config.showhealth                    = true
+GM.Config.showhealth                    = false
 -- needwantedforarrest - Enable/disable Cops can only arrest wanted people.
 GM.Config.needwantedforarrest           = false
 -- noguns - Enabling this feature bans Guns and Gun Dealers.
@@ -180,11 +180,11 @@ GM.Config.weaponCheckerHideNoLicense    = false
 Value settings
 ]]
 -- adminnpcs - Whether or not NPCs should be admin only. 0 = everyone, 1 = admin or higher, 2 = superadmin or higher, 3 = rcon only
-GM.Config.adminnpcs                     = 3
+GM.Config.adminnpcs                     = 2
 -- adminsents - Whether or not SENTs should be admin only. 0 = everyone, 1 = admin or higher, 2 = superadmin or higher, 3 = rcon only
 GM.Config.adminsents                    = 1
 -- adminvehicles - Whether or not vehicles should be admin only. 0 = everyone, 1 = admin or higher, 2 = superadmin or higher, 3 = rcon only
-GM.Config.adminvehicles                 = 3
+GM.Config.adminvehicles                 = 2
 -- adminweapons - Who can spawn weapons: 0: admins only, 1: supadmins only, 2: no one, 3: everyone
 GM.Config.adminweapons                  = 1
 -- arrestspeed - Sets the max arrest speed.
@@ -201,7 +201,7 @@ GM.Config.decaltimer                    = 120
 -- demotetime - Number of seconds before a player can rejoin a team after demotion from that team.
 GM.Config.demotetime                    = 120
 -- doorcost - Sets the cost of a door.
-GM.Config.doorcost                      = 30
+GM.Config.doorcost                      = 15
 -- entremovedelay - how long to wait before removing a bought entity after disconnect.
 GM.Config.entremovedelay                = 0
 -- gunlabweapon - The weapon that the gunlab spawns.
@@ -215,7 +215,7 @@ GM.Config.maxadvertbillboards           = 3
 -- maxCheques - The maximum number of cheques someone can write
 GM.Config.maxCheques                    = 5
 -- maxdoors - Sets the max amount of doors one can own.
-GM.Config.maxdoors                      = 20
+GM.Config.maxdoors                      = 3
 -- maxdrugs - Sets max drugs.
 GM.Config.maxdrugs                      = 2
 -- maxfoods - Sets the max food cartons per Microwave owner.
@@ -255,7 +255,7 @@ GM.Config.propcost                      = 10
 -- quakechance - Chance of an earthquake happening.
 GM.Config.quakechance                   = 4000
 -- respawntime - Minimum amount of seconds a player has to wait before respawning.
-GM.Config.respawntime                   = 1
+GM.Config.respawntime                   = 15
 -- changejobtime - Minimum amount of seconds a player has to wait before changing job.
 GM.Config.changejobtime                 = 10
 -- runspeed - Sets the max running speed.
@@ -271,7 +271,7 @@ GM.Config.shipmentspawntime             = 10
 -- startinghealth - the health when you spawn.
 GM.Config.startinghealth                = 100
 -- startingmoney - your wallet when you join for the first time.
-GM.Config.startingmoney                 = 500
+GM.Config.startingmoney                 = 0
 -- stunstickdamage - amount of damage the stunstick will do to entities.
 -- When between 0 and 1, the damage is relative, where 1 takes the entire health of the entity.
 -- When above 1, the damage is absolute
@@ -315,20 +315,20 @@ Other settings
 -- Note: the money packet must support the "Setamount" method (or the amount DTVar).
 GM.Config.MoneyClass = "spawned_money"
 -- In case you do wish to keep the default money, but change the model, this option is the way to go:
-GM.Config.moneyModel = "models/props/cs_assault/money.mdl"
+GM.Config.moneyModel = "models/bioshockinfinite/hext_coin.mdl"
 -- You can set your own, custom sound to be played for all players whenever a lockdown is initiated.
 -- Note: Remember to include the folder where the sound file is located.
 GM.Config.lockdownsound = "npc/overwatch/cityvoice/f_confirmcivilstatus_1_spkr.wav"
 
 -- The skin DarkRP uses. Set to "default" to use the GMod default derma theme.
 GM.Config.DarkRPSkin = "DarkRP"
-GM.Config.currency = "$"
+GM.Config.currency = "Credits"
 GM.Config.chatCommandPrefix = "/"
-GM.Config.F1MenuHelpPage = "https://darkrp.miraheze.org/wiki/Main_Page"
-GM.Config.F1MenuHelpPageTitle = "DarkRP Wiki"
+GM.Config.F1MenuHelpPage = "https://discord.gg/FJB4HVTRMs"
+GM.Config.F1MenuHelpPageTitle = "Discord Link"
 
 -- The sound that plays when you get a DarkRP notification
-GM.Config.notificationSound = "buttons/lightswitch2.wav"
+GM.Config.notificationSound = "buttons/blip1.wav"
 
 -- Put Steam ID's and ranks in this list, and the players will have that rank when they join.
 GM.Config.DefaultPlayerGroups = {
@@ -416,17 +416,6 @@ GM.Config.CategoryOverride = {
     },
 }
 
--- The list of weapons admins spawn with, in addition to the default weapons, a job's weapons and GM.Config.AdminsCopWeapons.
-GM.Config.AdminWeapons = {
-    "weapon_keypadchecker",
-}
-
--- These are the default laws, they're unchangeable in-game.
-GM.Config.DefaultLaws = {
-    "Do not attack other citizens except in self-defence.",
-    "Do not steal or break into people's homes.",
-    "Money printers/drugs are illegal.",
-}
 
 GM.Config.PocketBlacklist = {
     ["fadmin_jail"] = true,
@@ -474,11 +463,11 @@ GM.Config.preventClassItemRemoval = {
 
 -- Properties set to true are allowed to be used. Values set to false or are missing from this list are blocked.
 GM.Config.allowedProperties = {
-    remover = true,
+    remover = false,
     ignite = false,
     extinguish = true,
     keepupright = true,
-    gravity = true,
+    gravity = false,
     collision = true,
     skin = true,
     bodygroups = true,
@@ -500,9 +489,9 @@ GM.Config.hideTeamUnbuyable = true
 AFK module
 ---------------------------------------------------------------------------]]
 -- The time of inactivity before being demoted.
-GM.Config.afkdemotetime = 600
+GM.Config.afkdemotetime = 300
 -- Prevent people from spamming AFK.
-GM.Config.AFKDelay = 300
+GM.Config.AFKDelay = 100
 
 --[[---------------------------------------------------------------------------
 Hitmenu module

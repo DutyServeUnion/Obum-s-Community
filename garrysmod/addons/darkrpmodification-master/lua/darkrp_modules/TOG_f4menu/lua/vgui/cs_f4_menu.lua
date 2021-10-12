@@ -41,7 +41,7 @@ local PANEL = {
 		
 		local closebutton = vgui.Create( "DButton", self)
 		closebutton:SetText( "Close" )
-		closebutton:SetSize(75, 25)
+		closebutton:SetSize(75, 30)
 		closebutton:SetPos( x-81, 6)
 		closebutton.Paint = function(self, w, h)
 			surface.SetDrawColor( 30,30,30, 50)

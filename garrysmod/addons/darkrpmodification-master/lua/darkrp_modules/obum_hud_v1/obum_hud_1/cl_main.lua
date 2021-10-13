@@ -21,9 +21,30 @@ local hideHUDElements = {
     ["DarkRP_HUD"]                 = true,
     ["DarkRP_EntityDisplay"]       = true,
     ["DarkRP_Hungermod"]           = true,
-    ["DarkRP_ZombieInfo"] 		   = true,
-	["DarkRP_LocalPlayerHUD"] 	   = true,    
-    ["DarkRP_Agenda"] 			   = true,    
+    ["DarkRP_ZombieInfo"]          = true,
+    ["DarkRP_LocalPlayerHUD"] 	   = true,    
+    ["DarkRP_Agenda"] 		   = true,    
 
     local function hideElements(name)
-    if name = "CHudHealths"
+    if name = "CHudHealths" or name = "CHudBattery" or name == "CHudSuitPower" then
+	return false 
+    end
+		if hideHUDElments [name] then
+		   return false
+		end 
+   end
+	
+	
+	hook.Add("HUDShouldDraw", "hideElments", hideElments)
+	
+	-- prcess setting--
+if HUD.X == "left" then
+HUD.PosX == HUD.Border
+elseif HUD.X == "center" then
+HUD.PosX = ScrW() / 2 - HUD.Width / 2
+elseif HUD.X == "right" then
+HUD.PosX = ScrW(0 - hud.border
+else
+HUD.PosX = HUD.Border
+end
+      

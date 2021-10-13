@@ -43,7 +43,7 @@ HUD.PosX == HUD.Border
 elseif HUD.X == "center" then
 HUD.PosX = ScrW() / 2 - HUD.Width / 2
 elseif HUD.X == "right" then
-HUD.PosX = ScrW(0 - hud.border
+HUD.PosX = ScrW() - HUD.Border
 else
 HUD.PosX = HUD.Border
 end

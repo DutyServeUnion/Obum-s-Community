@@ -2,9 +2,10 @@
 
 ulx = true              --Ulx/Ulib
 
-ModerationGroups = { -- Who can see the moderation panel ?
+ModerationGroups = { -- Who can see the moderation panel
         [ 'superadmin' ] = true,
         [ 'admin' ] = true
+        [ 'moderator' ] = true 
     }
 
 GroupsColors = {

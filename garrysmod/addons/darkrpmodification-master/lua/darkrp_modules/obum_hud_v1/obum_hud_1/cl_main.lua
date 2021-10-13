@@ -39,12 +39,12 @@ local hideHUDElements = {
 	
 	-- prcess setting--
 if HUD.X == "left" then
-HUD.PosX == HUD.Border
+	HUD.PosX == HUD.Border
 elseif HUD.X == "center" then
-HUD.PosX = ScrW() / 2 - HUD.Width / 2
+	HUD.PosX = ScrW() / 2 - HUD.Width / 2
 elseif HUD.X == "right" then
-HUD.PosX = ScrW() - HUD.Border
+	HUD.PosX = ScrW() - HUD.Border
 else
-HUD.PosX = HUD.Border
+   HUD.PosX = HUD.Border
 end
       

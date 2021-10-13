@@ -2,7 +2,7 @@ include("config.lua")
 AddCSLuaFile("config.lua")
 
 surface.CreateFont( "Welcome Text", {
-	font = "Arial", -- Use the font-name which is shown to you by your operating system Font Viewer, not the file name
+	font = "Roboto", -- Use the font-name which is shown to you by your operating system Font Viewer, not the file name
 	extended = false,
 	size = 50,
 	weight = 500,
@@ -88,21 +88,21 @@ local PANEL = {
 			button:SetPos(290,100)
 			button:SetText("Join Our Website")
 			button.DoClick = function()
-			gui.OpenURL("www.google.com")
+			gui.OpenURL("")
 end
 		local button = vgui.Create( "DButton", homearea)
 			button:SetSize( 300, 50 )
 			button:SetPos(290,250)
 			button:SetText("Join Our SteamGroup")
 			button.DoClick = function()
-			gui.OpenURL("www.google.com")
+			gui.OpenURL("")
 end
 			local button = vgui.Create( "DButton", homearea)
 			button:SetSize( 300, 50 )
 			button:SetPos(290,400)
 			button:SetText("Donate For Special Benefits!")
 			button.DoClick = function()
-			gui.OpenURL("www.google.com")
+			gui.OpenURL("")
 end	
 		
 		local jobs = vgui.Create( "DScrollPanel" , pages )
@@ -144,111 +144,8 @@ end
 
 		
 		
-		-- weapons tab
-		local shipheadingback = vgui.Create( "DPanel" , ShipmentsWeapons )
-		shipheadingback:Dock( TOP )
-		shipheadingback:SetSize( 0,50 )
-		shipheadingback:DockMargin( 5, 5, 5, 5)
-		shipheadingback.Paint = function(self, w, h )
-			surface.SetDrawColor( 40,40,40, 150 )
-			surface.DrawRect( 0, 0, w, h )
-	end 
-	
-		local shipheading = vgui.Create( "DLabel", shipheadingback)
-		shipheading:SetText( "Shipments" )
-		shipheading:Dock( FILL )
-		shipheading:DockMargin( 5, 0, 0, 0 )
-		shipheading:SetFont( "DermaLarge" )
-		shipheading:SetTextColor( Color(255,255,255,255) )
-		shipheading:SetExpensiveShadow(2, Color(0,0,0,255) )
-		
-	for k, v in pairs(CustomShipments) do
-	
-		if( v.noship == false ) then
-			local shipback = vgui.Create( "DPanel" , ShipmentsWeapons )
-			shipback:Dock( TOP )
-			shipback:SetSize( 0,150 )
-			shipback:DockMargin( 5, 5, 5, 5)
-			shipback.Paint = function(self, w, h )
-				surface.SetDrawColor( 30,30,30, 150 )
-				surface.DrawRect( 0, 0, w, h )
-			shipback:SetExpensiveShadow(2, Color(0,0,0,255) )
-		end 
+		-- bye weapons tab lol
 
-			local entback = vgui.Create( "DPanel", shipback)
-			entback:Dock(LEFT)
-			entback:SetSize( 0, 150 )
-			entback:DockMargin( 5, 5, 5, 5 )
-			entback.Paint = function( self, w, h )
-				surface.SetDrawColor( 20,20,20,150 )
-				surface.DrawRect(0, 0, w, h)
-				
-			end	 
-
-			surface.SetFont( "Trebuchet24" )
-			local shipnamesX, shipnamesY = surface.GetTextSize( v.name )
-
-			local shipnames = vgui.Create( "DLabel", shipback)
-			shipnames:SetText( v.name )
-			shipnames:SetSize( shipnamesX, shipnamesY)
-			shipnames:Dock( TOP )
-			shipnames:DockMargin( 5, 5, 0, 0 )
-			shipnames:SetFont( "Trebuchet24" )
-			shipnames:SetTextColor( Color(255,255,255,255) )
-			shipnames:SetExpensiveShadow(2, Color(0,0,0,255) )
-			
-				local shipmodels = vgui.Create( "SpawnIcon", shipback)
-				shipmodels:Dock(LEFT)
-				shipmodels:SetSize( 150, 50 )
-				shipmodels:DockMargin( 5, 5, 5, 5 )
-				shipmodels:SetModel(v.model)
-				
-			surface.SetFont( "Trebuchet24" )
-			local shippriceX, shippriceY = surface.GetTextSize( "Price: " .. DarkRP.formatMoney(v.price) )
-			
-			local shipprice = vgui.Create( "DLabel", shipback)
-			shipprice:SetText( "Price: " .. DarkRP.formatMoney(v.price) )
-			shipprice:SetSize( shippriceX, shippriceY)
-			shipprice:Dock( TOP )
-			shipprice:DockMargin( 5, 5, 0, 0 )
-			shipprice:SetFont( "Trebuchet24" )
-			shipprice:SetTextColor( Color(255,255,255,255) )
-			shipprice:SetExpensiveShadow(2, Color(0,0,0,255) )
-			
-			surface.SetFont( "Trebuchet24" )
-			local shipamountX, shipamountY = surface.GetTextSize( "amount: " .. v.amount )
-			
-			local shipamount = vgui.Create( "DLabel", shipback)
-			shipamount:SetText( "amount: " .. v.amount)
-			shipamount:SetSize( shipamountX, shipamountY)
-			shipamount:Dock( TOP )
-			shipamount:DockMargin( 5, 5, 0, 0 )
-			shipamount:SetFont( "Trebuchet24" )
-			shipamount:SetTextColor( Color(255,255,255,255) )
-			shipamount:SetExpensiveShadow(2, Color(0,0,0,255) )
-
-
-			local shippurchasebutton = vgui.Create( "DButton", shipback )
-			shippurchasebutton:SetText("Purchase")
-			shippurchasebutton:SetTextColor( Color(255,255,255,255) )
-			shippurchasebutton:SetExpensiveShadow(2, Color(0,0,0,255) )
-			shippurchasebutton:Dock(BOTTOM)
-			shippurchasebutton:DockMargin(5, 5, 5, 5)
-			shippurchasebutton.Paint = function( self, w, h )
-				surface.SetDrawColor( 30, 30, 30, 150 )
-				surface.DrawRect(0,0, w, h )
-				surface.SetDrawColor( 20, 20, 20, 150 )
-				surface.DrawOutlinedRect( 0, 0, w, h )
-				end
-			shippurchasebutton.DoClick = function()
-				RunConsoleCommand( "say", "/buyshipment " .. v.name )
-				
-			end
-				
-		end
-
-				
-	end
 		
 		-- entities tab
 		for k, v in pairs(DarkRPEntities) do
@@ -411,114 +308,7 @@ end
 			
 		end
 
-	end
-	
-			-- ammo tab
-
-		local ammoheadingback = vgui.Create( "DPanel" , ammo )
-		ammoheadingback:Dock( TOP )
-		ammoheadingback:SetSize( 0,50 )
-		ammoheadingback:DockMargin( 5, 5, 5, 5)
-		ammoheadingback.Paint = function(self, w, h )
-			surface.SetDrawColor( 40,40,40, 150 )
-			surface.DrawRect( 0, 0, w, h )
-	end 
-	
-		local shipheading = vgui.Create( "DLabel", ammoheadingback)
-		shipheading:SetText( "Ammo" )
-		shipheading:Dock( FILL )
-		shipheading:DockMargin( 5, 0, 0, 0 )
-		shipheading:SetFont( "DermaLarge" )
-		shipheading:SetTextColor( Color(255,255,255,255) )
-		shipheading:SetExpensiveShadow(2, Color(0,0,0,255) )
 		
-	for k, v in pairs(GAMEMODE.AmmoTypes) do
-	
-		if( v.noship == false ) then
-			local shipback = vgui.Create( "DPanel" , ammo )
-			shipback:Dock( TOP )
-			shipback:SetSize( 0,150 )
-			shipback:DockMargin( 5, 5, 5, 5)
-			shipback.Paint = function(self, w, h )
-				surface.SetDrawColor( 30,30,30, 150 )
-				surface.DrawRect( 0, 0, w, h )
-			shipback:SetExpensiveShadow(2, Color(0,0,0,255) )
-		end 
-
-			local entback = vgui.Create( "DPanel", shipback)
-			entback:Dock(LEFT)
-			entback:SetSize( 0, 150 )
-			entback:DockMargin( 5, 5, 5, 5 )
-			entback.Paint = function( self, w, h )
-				surface.SetDrawColor( 20,20,20,150 )
-				surface.DrawRect(0, 0, w, h)
-				
-			end	 
-
-			surface.SetFont( "Trebuchet24" )
-			local shipnamesX, shipnamesY = surface.GetTextSize( v.name )
-
-			local shipnames = vgui.Create( "DLabel", shipback)
-			shipnames:SetText( v.name )
-			shipnames:SetSize( shipnamesX, shipnamesY)
-			shipnames:Dock( TOP )
-			shipnames:DockMargin( 5, 5, 0, 0 )
-			shipnames:SetFont( "Trebuchet24" )
-			shipnames:SetTextColor( Color(255,255,255,255) )
-			shipnames:SetExpensiveShadow(2, Color(0,0,0,255) )
-			
-				local shipmodels = vgui.Create( "SpawnIcon", shipback)
-				shipmodels:Dock(LEFT)
-				shipmodels:SetSize( 150, 50 )
-				shipmodels:DockMargin( 5, 5, 5, 5 )
-				shipmodels:SetModel(v.model)
-				
-			surface.SetFont( "Trebuchet24" )
-			local shippriceX, shippriceY = surface.GetTextSize( "Price: " .. DarkRP.formatMoney(v.price) )
-			
-			local shipprice = vgui.Create( "DLabel", shipback)
-			shipprice:SetText( "Price: " .. DarkRP.formatMoney(v.price) )
-			shipprice:SetSize( shippriceX, shippriceY)
-			shipprice:Dock( TOP )
-			shipprice:DockMargin( 5, 5, 0, 0 )
-			shipprice:SetFont( "Trebuchet24" )
-			shipprice:SetTextColor( Color(255,255,255,255) )
-			shipprice:SetExpensiveShadow(2, Color(0,0,0,255) )
-			
-			surface.SetFont( "Trebuchet24" )
-			local shipamountX, shipamountY = surface.GetTextSize( "amount: " .. v.amountGiven )
-			
-			local shipamount = vgui.Create( "DLabel", shipback)
-			shipamount:SetText( "amount: " .. v.amountGiven)
-			shipamount:SetSize( shipamountX, shipamountY)
-			shipamount:Dock( TOP )
-			shipamount:DockMargin( 5, 5, 0, 0 )
-			shipamount:SetFont( "Trebuchet24" )
-			shipamount:SetTextColor( Color(255,255,255,255) )
-			shipamount:SetExpensiveShadow(2, Color(0,0,0,255) )
-
-
-			local shippurchasebutton = vgui.Create( "DButton", shipback )
-			shippurchasebutton:SetText("Purchase")
-			shippurchasebutton:SetTextColor( Color(255,255,255,255) )
-			shippurchasebutton:SetExpensiveShadow(2, Color(0,0,0,255) )
-			shippurchasebutton:Dock(BOTTOM)
-			shippurchasebutton:DockMargin(5, 5, 5, 5)
-			shippurchasebutton.Paint = function( self, w, h )
-				surface.SetDrawColor( 30, 30, 30, 150 )
-				surface.DrawRect(0,0, w, h )
-				surface.SetDrawColor( 20, 20, 20, 150 )
-				surface.DrawOutlinedRect( 0, 0, w, h )
-				end
-			shippurchasebutton.DoClick = function()
-				RunConsoleCommand( "say", "/buyammo " .. k )
-				
-			end
-				
-		end
-
-				
-	end
 		
 		-- actions tab
 		local commandsarea = vgui.Create( "DPanel" , pages )

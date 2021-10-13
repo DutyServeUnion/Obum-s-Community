@@ -47,4 +47,19 @@ elseif HUD.X == "right" then
 else
    HUD.PosX = HUD.Border
 end
+	
+	-- hud element sjit --
+HUD.BHeight = HUD.Height / 2 - 15
+HUD.BPosY = HUD.PosY + HUD.Height / 2 + HUD.Border
+
+HUD.BHeight1 = HUD.BHeight / 2 - 10
+HUD.BPosY1 = HUD.BPosY + 3
+HUD.BPosY2 = HUD.BPosY + 27
+
+HUD.BarWidth = HUD.Width - 90
+
+HUD.HHeight = HUD.Height / 2 + 11
+
+local function Base()
+
       

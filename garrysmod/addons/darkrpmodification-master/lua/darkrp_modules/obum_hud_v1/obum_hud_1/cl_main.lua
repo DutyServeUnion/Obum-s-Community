@@ -92,5 +92,15 @@ local function Base()
 		draw.RoundedBoxEx(4, HUD.PosX, HUD.BPosY, HUD.Width, HUD.BHeight, Color(70,70,70,255), false, false, true, true)
 		draw.RoundedBoxEx(4, HUD.PosX + HUD.Width - 50, HUD.PosY, 50, HUD.HHeight, Color(60,60,60,255), false, true, false, false)
 		draw.RoundedBoxEx(4, HUD.PosX, HUD.PosY, 75, HUD.HHeight, Color(70,70,70,255), true, false, false, false)	
-		end
+end
+	
+	local function PlayerModel()
+
+	PlayerModel = vgui.Create("DModelPanel")
+	function PlayerModel:LayoutEntity( Entity ) return end
+	PlayerModel:SetModel( LocalPlayer():GetModel() )
+	PlayerModel:SetPos(HUD.PosX, HUD.PosY)
+	PlayerModel:SetSize(80, HUD.HHeight)
+	PlayerModel:SetLookAt(Vector( 0, 0, 65 ))
+	PlayerModel:SetCamPos(Vector( 16, 0, 65 ))
 

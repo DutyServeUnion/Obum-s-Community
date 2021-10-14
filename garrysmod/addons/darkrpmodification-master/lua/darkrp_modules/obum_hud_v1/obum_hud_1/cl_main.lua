@@ -119,7 +119,7 @@ end
 
 end
 
-hook.Add("InitPostEntity", "PlayerModel", PlayerModel)
+hook.Add("InitPostEntity", "PlayerMdl", PlayerModel)
 -- health and values
 local function Health()
 	

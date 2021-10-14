@@ -103,4 +103,24 @@ end
 	PlayerModel:SetSize(80, HUD.HHeight)
 	PlayerModel:SetLookAt(Vector( 0, 0, 65 ))
 	PlayerModel:SetCamPos(Vector( 16, 0, 65 ))
+		
+	timer.Create( "UpdatePlayerModel", 0.5, 0, function()
+			if LocalPlayer():GetModel() != PlayerModel.Entity:GetModel() then
+					PlayerModel:Remove()
+					PlayerModel = vgui.Create("DModelPanel")
+					function PlayerModel:LayoutEntity( Entity ) return end         
+					PlayerModel:SetModel( LocalPlayer():GetModel())
+					PlayerModel:SetPos(HUD.PosX, HUD.PosY)
+					PlayerModel:SetSize(75, HUD.HHeight)
+					PlayerModel:SetCamPos(Vector( 16, 0, 65 ))
+					PlayerModel:SetLookAt(Vector( 0, 0, 65 ))
+			end
+	end)
+
+end
+
+hook.Add("InitPostEntity", "PlayerModel", PlayerModel)
+-- health and values
+local function Health()
+	
 

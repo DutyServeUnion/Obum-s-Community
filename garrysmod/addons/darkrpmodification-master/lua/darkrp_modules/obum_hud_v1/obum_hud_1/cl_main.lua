@@ -120,7 +120,5 @@ end
 end
 
 hook.Add("InitPostEntity", "PlayerMdl", PlayerModel)
--- health and values
+-- health and values (Apex continue here)
 local function Health()
-	
-

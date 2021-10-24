@@ -11,3 +11,4 @@ AddDoorGroup("NAME OF THE GROUP HERE, you will see this when looking at a door",
 
 -- Example: AddDoorGroup("Cops and Mayor only", TEAM_CHIEF, TEAM_POLICE, TEAM_MAYOR)
 -- Example: AddDoorGroup("Gundealer only", TEAM_GUN)
+AddDoorGroup("Combine Door," TEAM_MPF, TEAM_CA, TEAM_CONSUL) -- bro where tf is my ota

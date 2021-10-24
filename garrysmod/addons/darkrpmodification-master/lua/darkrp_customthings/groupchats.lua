@@ -16,3 +16,8 @@ This is for people who know how to script Lua.
 ---------------------------------------------------------------------------]]
 -- Example: GAMEMODE:AddGroupChat(TEAM_MOB, TEAM_GANG)
 -- Example: GAMEMODE:AddGroupChat(function(ply) return ply:isCP() end)
+
+
+--{[ Radio addon might be implented soon ]} --
+
+DarkRP.createGroupChat(TEAM_MPF, TEAM_CA, TEAM_CONSUL) 

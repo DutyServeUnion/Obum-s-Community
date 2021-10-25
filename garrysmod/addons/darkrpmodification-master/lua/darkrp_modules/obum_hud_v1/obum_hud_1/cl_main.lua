@@ -127,4 +127,10 @@ local function Health()
 	local FullHealth = LocalPlayer():Health() or 0
 	if Health < 0 then Health = 0 elseif Health > 100 then Health = 100 end
 	local DrawHealth = math.Min(Health/GAMEMODE.Config.startinghealth, 1)
-	-- one sec i forgot tex TITLE HERE - -
+	-- one sec i forgot tex TITLE HERE - - 
+		-- Title
+-- Title
+	draw.DrawText("Health", "Obum_Roboto_1", HUD.PosX + 10 + 1, HUD.BPosY1 + 6 + 1, Color(0, 0, 0, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
+	draw.DrawText("Health", "Obum_Roboto_1", HUD.PosX + 10, HUD.BPosY1 + 6, Color(255, 255, 255, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
+	
+	

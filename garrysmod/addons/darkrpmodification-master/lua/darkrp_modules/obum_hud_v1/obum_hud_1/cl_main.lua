@@ -133,4 +133,51 @@ local function Health()
 	draw.DrawText("Health", "Obum_Roboto_1", HUD.PosX + 10 + 1, HUD.BPosY1 + 6 + 1, Color(0, 0, 0, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
 	draw.DrawText("Health", "Obum_Roboto_1", HUD.PosX + 10, HUD.BPosY1 + 6, Color(255, 255, 255, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
 	
+		
+ 	draw.RoundedBox(4, HUD.PosX + 80, HUD.BPosY1 + 5, HUD.BarWidth, HUD.BHeight1, Color(30,30,30,255))
+	if Health != 0 then
+		draw.RoundedBox(4, HUD.PosX + 80 + 1, HUD.BPosY1 + 5 + 1, (HUD.BarWidth - 2) * DrawHealth, HUD.BHeight1 - 2, HUD.HealthColor)
+	end
+	
+	draw.DrawText(FullHealth, "Obum_Roboto_1", HUD.PosX + 80 + HUD.BarWidth / 2, HUD.BPosY1 + 6 + 1, Color(0, 0, 0, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+	draw.DrawText(FullHealth, "Obum_Roboto_1", HUD.PosX + 80 + HUD.BarWidth / 2, HUD.BPosY1 + 6, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+	
+end
+	
+
+
+local function Armor()
+			-- ah shit here we go again
+-- Values
+	local Armor = LocalPlayer():Armor() or 0
+	local FullArmor = LocalPlayer():Armor() or 0
+	if Armor < 0 then Armor = 0 elseif Armor > 100 then Armor = 100 end
+		-- 
+			-- Title
+	draw.DrawText("Armor", "Obum_Roboto_1", HUD.PosX + 10 + 1, HUD.BPosY2 + 6 + 1, Color(25, 168, 179), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
+	draw.DrawText("Armor", "Obum_Roboto_1", HUD.PosX + 10, HUD.BPosY2 + 6, Color(255, 255, 255, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
+	
+	-- Background Bar
+	draw.RoundedBox(4, HUD.PosX + 80, HUD.BPosY2 + 5, HUD.BarWidth, HUD.BHeight1, Color(58, 45, 140))
+	
+	-- Bar
+	if Armor != 0 then
+		draw.RoundedBox(4, HUD.PosX + 80 + 1, HUD.BPosY2 + 5 + 1, (HUD.BarWidth - 2) * Armor / 100, HUD.BHeight1 - 2, HUD.ArmorColor)
+	end
+	
+	draw.DrawText(Armor, "Obum_Roboto_1", HUD.PosX + 80 + HUD.BarWidth / 2, HUD.BPosY2 + 6 + 1, Color(0, 0, 0, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+	draw.DrawText(Armor, "Obum_Roboto_1", HUD.PosX + 80 + HUD.BarWidth / 2, HUD.BPosY2 + 6, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+	
+end
+
+local function PlayerInfo()
+
+	local VAL_Name 	= LocalPlayer():Nick() or ""
+	local VAL_Job 	= LocalPlayer():getDarkRPVar("job") or ""
+	local VAL_Wallet = ""..formatNumber(LocalPlayer():getDarkRPVar("money") or 0)
+	local VAL_Salary = ""..formatNumber(LocalPlayer():getDarkRPVar("salary") or 0)
+	
+
+		
+		
 	

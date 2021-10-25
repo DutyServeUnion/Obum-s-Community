@@ -122,3 +122,9 @@ end
 hook.Add("InitPostEntity", "PlayerMdl", PlayerModel)
 -- health and values (Apex continue here)
 local function Health()
+			-- Values
+	local Health = LocalPlayer():Health() or 0
+	local FullHealth = LocalPlayer():Health() or 0
+	if Health < 0 then Health = 0 elseif Health > 100 then Health = 100 end
+	local DrawHealth = math.Min(Health/GAMEMODE.Config.startinghealth, 1)
+	-- one sec i forgot tex TITLE HERE - -

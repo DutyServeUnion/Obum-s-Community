@@ -177,7 +177,7 @@ local function PlayerInfo()
 	local VAL_Wallet = ""..formatNumber(LocalPlayer():getDarkRPVar("money") or 0)
 	local VAL_Salary = ""..formatNumber(LocalPlayer():getDarkRPVar("salary") or 0)
 	
-
+-- done
 		
 		
 	

@@ -131,3 +131,13 @@ Civil protection can set warrants, make people wanted and do some other police r
 GAMEMODE.CivilProtection = {
     [TEAM_MPF] = true,
 }
+
+
+
+ALLAH = ALLAH or }
+
+
+
+ALLAH.
+ALLAH.CONG
+miALLAH.g.MainColor        = Color( 10,  132, 255 

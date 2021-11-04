@@ -1,6 +1,6 @@
 -- =======================SETTINGS======================= --
 
--- really unsure about this so, I got the ranks from the file however the 'serverguard = true is 100% wrong
+-- really unsure about this so, I got the ranks from the file however the 'serverguard = true' is 100% wrong
 
 serverguard = true              --Ulx/Ulib/ServerGuard
 

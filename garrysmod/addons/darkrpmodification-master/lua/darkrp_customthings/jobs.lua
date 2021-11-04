@@ -132,7 +132,7 @@ GAMEMODE.CivilProtection = {
     [TEAM_MPF] = true,
 }
 
-
+--[[[
 
 ALLAH = ALLAH or }
 

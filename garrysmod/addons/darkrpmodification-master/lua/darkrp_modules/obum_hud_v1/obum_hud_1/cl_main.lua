@@ -1,4 +1,4 @@
-local HUD = {}
+--[[ local HUD = {}
 
 -- you can eddit settings here
 HUD.x = "left"
